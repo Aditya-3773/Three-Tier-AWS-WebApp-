@@ -4,7 +4,7 @@ I built this to actually understand how a "real" AWS architecture fits together 
 
 Everything here was built by hand in the AWS Console, click by click, on purpose — no Terraform, no CloudFormation. I wanted to actually understand what each piece does before automating any of it away.
 
-**Traffic flow:** Internet → Application Load Balancer (public) → EC2 app tier / Auto Scaling Group (private) → RDS (private)
+**Traffic flow:** Internet -> Application Load Balancer (public) -> EC2 app tier / Auto Scaling Group (private) -> RDS (private)
 
 ---
 
