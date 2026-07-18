@@ -10,7 +10,7 @@ Everything here was built by hand in the AWS Console, click by click, on purpose
 
 ## Architecture
 
-![<img width="2720" height="2480" alt="three_tier_aws_architecture" src="https://github.com/user-attachments/assets/2b4051ae-b93f-466f-9fcb-3b62eb795efc" />
+![<img width="2720" height="2480" alt="three_tier_aws_architecture" src="https://github.com/user-attachments/assets/4f86ae84-d664-4568-833a-d7fa6b88d312" />
 ]([docs/architecture-diagram.png](https://1drv.ms/i/c/64a3dbeda41fdca9/IQCojxbHqfxdRoI6kp871O7oATI9cfXL6woza0J5wfGmMow?e=wHWpMg))
 
 The whole design comes down to one rule: **each layer only trusts the layer directly in front of it.**
