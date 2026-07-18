@@ -4,13 +4,14 @@ I built this to actually understand how a "real" AWS architecture fits together 
 
 Everything here was built by hand in the AWS Console, click by click, on purpose — no Terraform, no CloudFormation. I wanted to actually understand what each piece does before automating any of it away.
 
-**Traffic flow:** Internet -> Application Load Balancer (public) -> EC2 app tier / Auto Scaling Group (private) -> RDS (private)
+**Traffic flow:** Internet → Application Load Balancer (public) → EC2 app tier / Auto Scaling Group (private) → RDS (private)
 
 ---
 
 ## Architecture
 
-![Architecture Diagram](https://1drv.ms/i/c/64a3dbeda41fdca9/IQCojxbHqfxdRoI6kp871O7oATI9cfXL6woza0J5wfGmMow?e=kStrdv)
+![<img width="2720" height="2480" alt="three_tier_aws_architecture" src="https://github.com/user-attachments/assets/2b4051ae-b93f-466f-9fcb-3b62eb795efc" />
+]([docs/architecture-diagram.png](https://1drv.ms/i/c/64a3dbeda41fdca9/IQCojxbHqfxdRoI6kp871O7oATI9cfXL6woza0J5wfGmMow?e=wHWpMg))
 
 The whole design comes down to one rule: **each layer only trusts the layer directly in front of it.**
 
@@ -112,8 +113,6 @@ SELECT * FROM test;
 It worked — which confirms an instance sitting in a private subnet, with no public IP of its own, can still reach the database sitting in *its* private subnet, but strictly through the `app-sg → db-sg` chain and nothing else.
 
 **The Auto Scaling Group stayed healthy** the whole time I was testing — instances passed their checks and were spread across both AZs, so losing one wouldn't have taken the app down.
-
-*(Screenshots of the ALB response and the SSM/RDS session are in `docs/screenshots/`.)*
 
 ---
 
